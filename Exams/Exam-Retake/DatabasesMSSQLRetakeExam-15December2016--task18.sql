@@ -1,0 +1,6 @@
+CREATE TRIGGER tr_LogDeletedMessages ON Messages FOR DELETE
+AS
+INSERT INTO MessageLogs
+SELECT *
+FROM DELETED
+
